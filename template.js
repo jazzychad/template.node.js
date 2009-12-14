@@ -34,15 +34,14 @@ var tmpl  = function (str, data){
 		 .replace(/[\r\n\t]/g, " ")
 		 .split("<%").join("\t")
 		 .replace(/((^|%>)[^\t]*)'/g, "$1\r")
-          .replace(/\t=(.*?)%>/g, "',$1,'")
-          .split("\t").join("');")
-          .split("%>").join("p.push('")
-          .split("\r").join("\\'")
-      + "');}return p.join('');");
+                 .replace(/\t=(.*?)%>/g, "',$1,'")
+                 .split("\t").join("');")
+                 .split("%>").join("p.push('")
+                 .split("\r").join("\\'")
+                 + "');}return p.join('');");
     // Provide some basic currying to the user
     return data ? fn( data ) : fn;
-  };
-//})();
+};
 
 
 /* exports */
