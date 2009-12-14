@@ -1,0 +1,1 @@
+<%=obj.num%> apples for <%=obj.person%>

@@ -1,0 +1,1 @@
+<% for ( var i = 0; i < users.length; i++ ) { %><%=users[i].name%> is <%=users[i].age%> years old.\n<% } %>
