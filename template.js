@@ -33,7 +33,7 @@ var tmpl  = function (str, data){
 		 str
 		 .replace(/[\r\n\t]/g, " ")
 		 .split("<%").join("\t")
-		 .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+		 .replace(/((^|%>)[^\t]*)'/g, function($0, $1) { return return $1.replace(/'/g, "\\'") + "\r"; })
                  .replace(/\t=(.*?)%>/g, "',$1,'")
                  .split("\t").join("');")
                  .split("%>").join("p.push('")
